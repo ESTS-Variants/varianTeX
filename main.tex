@@ -1,4 +1,6 @@
-\documentclass[10pt, DIV=calc, enabledeprecatedfontcommands]{scrbook}
+\documentclass[
+%draft%     uncomment to activate draft mode (see preamble/proofs)
+]{scrbook}   
 
 % preamble -- do not rearrange order of \includes
 \include{preamble/classoptions}
@@ -15,8 +17,7 @@
 \include{preamble/headerfooter}
 \include{preamble/footnoteformat}
 \include{preamble/codesnipets}
-
-% \include{preamble/proofs}     % do not include yet, throws nasty errors in overleaf
+\include{preamble/proofs}     
 
 % define issue details
 \newcommand\thejournal{My Journal}

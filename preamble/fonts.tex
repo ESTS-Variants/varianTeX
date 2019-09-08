@@ -1,10 +1,12 @@
 % Palatino font options
 \usepackage{mathpazo}                   % Palatino in LaTeX math
 \usepackage{tgpagella}                  % Palatino font
-\renewcommand{\ltfamily}{\familydefault}% Makes sure LaTeX keeps using Palatino in Lithuanian 
 \addtokomafont{disposition}{\rmfamily}  % Palatino for titles etc.
 \setkomafont{descriptionlabel}{         % font for description lists    
-    \usekomafont{captionlabel}\bfseries % Palatino bold
+\usekomafont{captionlabel}\bfseries     % Palatino bold
 }
 \setkomafont{caption}{\footnotesize}    % smaller font size for captions
 
+% To make sure LaTeX keeps using Palatino in Lithuanian:
+% in OVERLEAF change the following \newcommand to \renewcommand
+% \newcommand{\ltfamily}{\familydefault} 
