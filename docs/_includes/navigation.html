@@ -2,7 +2,7 @@
 	<div class="flex-container">
   		{% for item in site.data.navigation %}
     	<div class="nav-item">
-    		<a href="/VariantX-info{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
+    		<a href="/VariantX{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
     	</div>
   		{% endfor %}
  	</div>
