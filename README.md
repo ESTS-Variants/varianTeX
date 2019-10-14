@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/206998785.svg)](https://zenodo.org/badge/latestdoi/206998785)
+[![DOI](https://zenodo.org/badge/215016822.svg)](https://zenodo.org/badge/latestdoi/215016822)
 # VariantX
 
 ## About the Template
