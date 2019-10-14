@@ -1,0 +1,9 @@
+- name: Home
+  link: /
+- name: For Editors
+  link: /foreditors.html
+- name: For Authors
+  link: /forauthors.html
+- name: FAQ
+  link: /faq.html
+
