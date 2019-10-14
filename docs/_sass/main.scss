@@ -6,6 +6,15 @@
 
 }
 
+nav {
+	border-top: 3px double black;
+	border-bottom: 3px double black;
+	padding: 5px;
+	margin-top: 1em;
+	margin-bottom: 1em;
+
+}
+
 .nav-item {
 	padding: 12px;
 	border: 1px solid white;
@@ -28,7 +37,7 @@ a {
 }
 
 a:hover {
-	color: #41B3A3;
+	color: #c38d9e;
 }
 
 pre {
@@ -55,7 +64,7 @@ code{
 }
 #header {
 	hight: 50px;
-	margin-bottom: 4em;
+	margin-bottom: 2em;
 	text-align: center;
 }
 
@@ -65,9 +74,18 @@ code{
 }
 
 h2 {
-	border-bottom: 4px double #8c8b8b;
 	padding: 10px;
 	text-align: center;
+	border-bottom: 1px solid black;
+}
+
+h3 {
+	color: #41B3A3;	
+}
+
+strong {
+	color: #41B3A3;	
+	
 }
 
 .flex-container {

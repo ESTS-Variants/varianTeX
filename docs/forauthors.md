@@ -9,7 +9,7 @@ If you are new to these technologies, and want to learn more about LaTeX and Ove
 
 
 ### Step 1. Creating an Overleaf-account
-In a web browser of your choice, go to [https://overleaf.com/](https://overleaf.com) and click on *Register* in the upper right corner. You have the option to log in with a social media-account, but we recommend you register with your email address. Once you have registered, you are taken to a welcome screen in which you can choose from three options: take a look at the templates, go to the LaTeX help guide or create a new project. We will be using a template that was specifically developed for authors of the *Variants* Journal. 
+In a web browser of your choice, visit [https://overleaf.com/](https://overleaf.com) and click on *Register* in the upper right corner. You have the option to log in with a social media-account, but we recommend you register with your email address. Once you have registered, you are taken to a welcome screen in which you can choose from three options: take a look at the templates, go to the LaTeX help guide or create a new project. We will be using a template that was specifically developed for authors of the *Variants* Journal. 
 
 If you already know LaTeX and prefer to use your own (open source) software to compose your submission, you can also [download the source of our Variants For Authors template from GitHub](https://github.com/WoutDLN/Variants-For-Authors). 
 
