@@ -2,17 +2,17 @@
 
 nav { border-top: 3px double black; border-bottom: 3px double black; padding: 5px; margin-top: 1em; margin-bottom: 1em; }
 
-.nav-item { padding: 12px; border: 1px solid white; border-radius: 15px; }
+.nav-item { padding: 12px; border: 1px solid white; border-radius: 15px; margin: 5px; }
 
-body { background-color: #41B3A3xxx; margin: 0; font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif; line-height: 1.25; font-size: 1.5em; }
+body { background-color: #41B3A3xxx; margin: 0; font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif; line-height: 1.25; font-size: 4vh; }
 
 a { text-decoration: none; color: #E27D60; }
 
 a:hover { color: #c38d9e; }
 
-pre { background-color: rgba(71, 178, 163, 0.5); border-radius: 5px; padding: 5px; font-size: 1em; }
+pre { background-color: rgba(71, 178, 163, 0.25); border-radius: 5px; padding: 5px; font-size: 3.5vh; }
 
-code { font-size: 1em; }
+code { font-size: 3.5vh; color: #c38d9e; }
 
 #content { max-width: 650px; margin-left: auto; margin-right: auto; background-color: #87CDCAxxx; height: 100%; padding: 5px; margin-bottom: 100px; text-align: justify; }
 
@@ -28,6 +28,8 @@ strong { color: #41B3A3; }
 
 .flex-container { display: flex; flex-direction: row; justify-content: center; }
 
-.nav-item { margin: 5px; }
+img.float-left { float: left; margin: 0px 15px 15px 0px; }
+
+img.float-right { float: right; margin: 0px 15px 15px 0px; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -12,14 +12,13 @@ nav {
 	padding: 5px;
 	margin-top: 1em;
 	margin-bottom: 1em;
-
 }
 
 .nav-item {
 	padding: 12px;
 	border: 1px solid white;
 	border-radius: 15px;
-
+	margin: 5px;
 }
 
 body {
@@ -27,8 +26,7 @@ body {
 	margin: 0;
 	font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif; 
 	line-height: 1.25;
-	font-size: 1.5em;
-
+	font-size: 4vh;
 	}
 
 a {
@@ -41,15 +39,15 @@ a:hover {
 }
 
 pre {
-	background-color: rgba(71,178,163,0.5);
+	background-color: rgba(71,178,163,0.25);
 	border-radius: 5px;
 	padding: 5px;
-	font-size: 1em;
-
+	font-size: 3.5vh;
 }
 
 code{
-	font-size: 1em;
+	font-size: 3.5vh;
+	color: #c38d9e;
 }
 
 #content {
@@ -62,6 +60,7 @@ code{
 	margin-bottom: 100px;
 	text-align: justify;
 }
+
 #header {
 	hight: 50px;
 	margin-bottom: 2em;
@@ -85,7 +84,6 @@ h3 {
 
 strong {
 	color: #41B3A3;	
-	
 }
 
 .flex-container {
@@ -94,6 +92,12 @@ strong {
 	justify-content: center;
 }
 
-.nav-item {
-	margin: 5px;
+img.float-left {
+	float: left; 
+	margin: 0px 15px 15px 0px;
+}
+
+img.float-right {
+	float: right; 
+	margin: 0px 15px 15px 0px;
 }
