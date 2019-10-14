@@ -1,38 +1,4 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>For Authors</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-  </head>
-  <body>
-  	<div id="content">
-      <div id="header">
-        <h1>VariantX</h1>
-        <span id="subtitle">Template Instructions</span>
-      </div>
-    	 <nav>
-	<div class="flex-container">
-  		
-    	<div class="nav-item">
-    		<a href="/VariantX-info/" >Home</a>
-    	</div>
-  		
-    	<div class="nav-item">
-    		<a href="/VariantX-info/foreditors.html" >For Editors</a>
-    	</div>
-  		
-    	<div class="nav-item">
-    		<a href="/VariantX-info/forauthors.html" class="current">For Authors</a>
-    	</div>
-  		
-    	<div class="nav-item">
-    		<a href="/VariantX-info/faq.html" >FAQ</a>
-    	</div>
-  		
- 	</div>
-</nav>
-    	 <h2 id="information-for-authors">Information for Authors</h2>
+I"O	<h2 id="information-for-authors">Information for Authors</h2>
 <p>As from issue 15, authors contributing to <a href="https://journals.openedition.org/variants">Variants</a> can also submit their articles or reviews in LaTeX format. For some, this may mean a new way of working. At first sight, a LaTeX file looks rather daunting and indeed it takes some getting used to. Luckily there are many great introductions and handy templates to get you started. And there are userfriendly applications like <a href="https://overleaf.com">Overleaf</a> that will help you write and visualize LaTeX.</p>
 
 <p>If you are new to these technologies, and want to learn more about LaTeX and Overleaf, please check out our <a href="https://github.com/WoutDLN/LaTeXJournal_Variants/wiki/FAQ">FAQ</a> before continuing here. In what follows, we will explain step-by-step how to work with the Variants template in Overleaf.</p>
@@ -44,10 +10,4 @@
 
 <h3 id="step-2-opening-the-variants-template">Step 2. Opening the Variants Template</h3>
 <p>Once you have created an account, you can follow <a href="https://www.overleaf.com/latex/templates/submission-template-to-variants-for-authors/znsqffgrvshv">this link to the Overleaf Template we designed for our Authors</a>. If you’re not logged in yet, do so now (top right corner), and press the <strong>Open as Template</strong> button. This will start a new LaTeX project in your Overleaf Account, that already includes the bare-bones structure of our template.</p>
-
-      <div id="footer">
-      
-      </div>
-	 </div>
-  </body>
-</html>
+:ET

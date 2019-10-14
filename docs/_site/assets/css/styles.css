@@ -1,65 +1,27 @@
-.current {
-  color: black;
-  padding: 12px;
-  border: 1px solid black;
-  border-radius: 15px; }
+.current { color: black; padding: 12px; border: 1px solid black; border-radius: 15px; }
 
-.nav-item {
-  padding: 12px;
-  border: 1px solid white;
-  border-radius: 15px; }
+.nav-item { padding: 12px; border: 1px solid white; border-radius: 15px; }
 
-body {
-  background-color: #41B3A3 xxx;
-  margin: 0;
-  font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
-  line-height: 1.25;
-  font-size: 1.5em; }
+body { background-color: #41B3A3xxx; margin: 0; font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif; line-height: 1.25; font-size: 1.5em; }
 
-a {
-  text-decoration: none;
-  color: #E27D60; }
+a { text-decoration: none; color: #E27D60; }
 
-a:hover {
-  color: #41B3A3; }
+a:hover { color: #41B3A3; }
 
-pre {
-  background-color: rgba(71, 178, 163, 0.5);
-  border-radius: 5px;
-  padding: 5px;
-  font-size: 1em; }
+pre { background-color: rgba(71, 178, 163, 0.5); border-radius: 5px; padding: 5px; font-size: 1em; }
 
-code {
-  font-size: 1em; }
+code { font-size: 1em; }
 
-#content {
-  max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #87CDCA xxx;
-  height: 100%;
-  padding: 5px;
-  margin-bottom: 100px;
-  text-align: justify; }
+#content { max-width: 650px; margin-left: auto; margin-right: auto; background-color: #87CDCAxxx; height: 100%; padding: 5px; margin-bottom: 100px; text-align: justify; }
 
-#header {
-  hight: 50px;
-  margin-bottom: 4em;
-  text-align: center; }
+#header { hight: 50px; margin-bottom: 4em; text-align: center; }
 
-#header h1 {
-  margin-block-end: 0em;
-  font-size: 3em; }
+#header h1 { margin-block-end: 0em; font-size: 3em; }
 
-h2 {
-  border-bottom: 4px double #8c8b8b;
-  padding: 10px;
-  text-align: center; }
+h2 { border-bottom: 4px double #8c8b8b; padding: 10px; text-align: center; }
 
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center; }
+.flex-container { display: flex; flex-direction: row; justify-content: center; }
 
-.nav-item {
-  margin: 5px; }
+.nav-item { margin: 5px; }
+
+/*# sourceMappingURL=styles.css.map */
