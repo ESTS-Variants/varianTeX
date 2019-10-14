@@ -9,10 +9,10 @@
 
 body {
 	background-color: #41B3A3xxx;
-	margin: 0;
+	padding: 1vw;
 	font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif; 
 	line-height: 1.25;
-	font-size: 3.5vw;
+	font-size: 5vw;
 	}
 
 #header {
@@ -23,17 +23,17 @@ body {
 
 #header h1 {
 	margin-block-end: 0em;
-	font-size: 15vw;
+	font-size: 18vw;
 }
 pre {
 	background-color: rgba(71,178,163,0.25);
 	border-radius: 5px;
 	padding: 5px;
-	font-size: 3vw;
+	font-size: 4.5vw;
 }
 
 code{
-	font-size: 3vw;
+	font-size: 4.5vw;
 	color: #c38d9e;
 }
 

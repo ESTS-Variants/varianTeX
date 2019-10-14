@@ -3,15 +3,15 @@
 /* For mobile phones: */
 [class*="col-"] { width: 100%; }
 
-body { background-color: #41B3A3xxx; margin: 0; font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif; line-height: 1.25; font-size: 3.5vw; }
+body { background-color: #41B3A3xxx; padding: 1vw; font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif; line-height: 1.25; font-size: 5vw; }
 
 #header { hight: 50px; margin-bottom: 2em; text-align: center; }
 
-#header h1 { margin-block-end: 0em; font-size: 15vw; }
+#header h1 { margin-block-end: 0em; font-size: 18vw; }
 
-pre { background-color: rgba(71, 178, 163, 0.25); border-radius: 5px; padding: 5px; font-size: 3vw; }
+pre { background-color: rgba(71, 178, 163, 0.25); border-radius: 5px; padding: 5px; font-size: 4.5vw; }
 
-code { font-size: 3vw; color: #c38d9e; }
+code { font-size: 4.5vw; color: #c38d9e; }
 
 @media only screen and (min-width: 768px) { /* For desktop: */
   [class*="col-"] { float: left; padding: 15px; }
