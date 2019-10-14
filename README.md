@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/206998785.svg)](https://zenodo.org/badge/latestdoi/206998785)
-# LaTeXJournal_Variants
+# VariantX
 
 ## About the Template
 
