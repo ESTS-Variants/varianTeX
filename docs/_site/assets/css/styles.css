@@ -1,3 +1,5 @@
+* { box-sizing: border-box; }
+
 .current { color: black; padding: 12px; border: 1px solid black; border-radius: 15px; }
 
 nav { border-top: 3px double black; border-bottom: 3px double black; padding: 5px; margin-top: 1em; margin-bottom: 1em; }
@@ -18,7 +20,7 @@ code { font-size: 3.5vh; color: #c38d9e; }
 
 #header { hight: 50px; margin-bottom: 2em; text-align: center; }
 
-#header h1 { margin-block-end: 0em; font-size: 3em; }
+#header h1 { margin-block-end: 0em; font-size: 15vh; }
 
 h2 { padding: 10px; text-align: center; border-bottom: 1px solid black; }
 
