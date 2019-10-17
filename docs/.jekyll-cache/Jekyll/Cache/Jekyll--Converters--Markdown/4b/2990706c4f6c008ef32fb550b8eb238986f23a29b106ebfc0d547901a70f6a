@@ -1,0 +1,14 @@
+I"\<p>LaTeX (pronounced <em>lah-tekh</em> or <em>lay-tekh</em>) is a useful tool for the creation of documents in which you separate the content from the typesetting. To be precise, it is a document markup language and document preparation system for the TeX typesetting program. That means that you indicate that a certain part of the text is a title instead of styling it as a title like you would do in a word processor like MS Word or Open Office. In that respect, it is similar to TEI/XML – although the syntax is different. For example, a title in TEI/XML would look like this :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;title&gt;What is text, really?&lt;/title&gt;
+</code></pre></div></div>
+
+<p>A title in LaTeX looks like this</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\title{What is text, really?}
+</code></pre></div></div>
+
+<p>The great advantage of LaTeX is that authors can concentrate on the content of their work. They  do not need to worry about the design and appearance of their documents; it’s up to the editors or publishers to decide how text marked as <code class="highlighter-rouge">title</code> will represented. Accordingly, LaTeX removes a significant burden from editors with regard to typesetting and styling the documents they receive for publication.</p>
+
+<p>Extensive general user documentation including a <a href="https://overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">Learn LaTeX in 30 minutes</a>-guide can be found at <a href="https://overleaf.com/learn">https://overleaf.com/learn</a>.</p>
+:ET

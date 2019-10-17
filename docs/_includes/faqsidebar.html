@@ -1,0 +1,12 @@
+<div class="col-3">
+	<div class="col-3 faqsidebar" id="stickysidebar">
+	<h4 style="text-align: center">Jump To:</h4>
+	<ul>
+		{% for q in site.faq %}
+			<li>
+				<a href="#{{ q.title | slugify}}">{{ q.title}}</a>
+			</li>
+		{% endfor %} 
+	</ul>
+</div>
+</div> 
