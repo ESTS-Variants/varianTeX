@@ -19,6 +19,8 @@ pre { background-color: rgba(71, 178, 163, 0.25); border-radius: 5px; padding: 5
 
 code { font-size: 4vw; color: #c38d9e; }
 
+figure { max-width: 100%; margin: 0; font-size: 3vw; text-align: center; color: #808080; }
+
 @media only screen and (min-width: 768px) { /* For desktop: */
   [class*="col-"] { float: left; padding: 15px; }
   body { font-size: 2vw; }
@@ -26,10 +28,13 @@ code { font-size: 4vw; color: #c38d9e; }
   pre { font-size: 1.75vw; }
   code { font-size: 1.75vw; }
   .footer { font-size: 1vw; }
-  .faqsidebar { visibility: hidden; }
+  figure { font-size: 1vw; }
+  .faqsidebar { display: none; }
   .footer img { width: 1vw; margin: .15vw; }
-  .sticky { font-size: 1.5vw; position: fixed; top: 0; right: 0; width: 100%; visibility: visible; }
+  .sticky { font-size: 1.5vw; position: fixed; top: 0; right: 0; width: 100%; display: block; }
   .sticky + .content { padding-top: 102px; }
+  .float-left { float: left; padding: 0px 2vh 2vh 0px; max-width: 33%; }
+  .float-right { float: right; margin: 0px 15px 15px 0px; max-width: 33%; }
   .col-1 { width: 8.33%; }
   .col-2 { width: 16.66%; }
   .col-3 { width: 25%; }
@@ -66,9 +71,5 @@ h3 { color: #41B3A3; }
 strong { color: #41B3A3; }
 
 .flex-container { display: flex; flex-direction: row; justify-content: center; }
-
-img.float-left { float: left; margin: 0px 15px 15px 0px; }
-
-img.float-right { float: right; margin: 0px 15px 15px 0px; }
 
 /*# sourceMappingURL=styles.css.map */

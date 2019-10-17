@@ -59,7 +59,13 @@ code{
 	color: #c38d9e;
 }
 
-
+figure {
+	max-width:100%;
+	margin: 0;
+	font-size: 3vw;
+	text-align: center;
+	color: #808080;
+}
 
 @media only screen and (min-width: 768px) {
   /* For desktop: */
@@ -72,8 +78,9 @@ code{
 	pre {font-size: 1.75vw;}
 	code{font-size: 1.75vw;}
 	.footer {font-size: 1vw;}
+	figure {font-size: 1vw;}
 	.faqsidebar {
-		visibility: hidden;
+		display: none;
 		}
     .footer img {
 		width: 1vw;
@@ -85,10 +92,20 @@ code{
   		top: 0;
   		right: 0;
   		width: 100%;
-  		visibility: visible;
+  		display: block;
 		}
 	.sticky + .content {
   		padding-top: 102px;
+		}
+	.float-left {
+		float: left; 
+		padding: 0px 2vh 2vh 0px;
+		max-width: 33%;
+		}
+	.float-right {
+		float: right; 
+		margin: 0px 15px 15px 0px;
+		max-width: 33%;
 		}
   .col-1 {width: 8.33%;}
   .col-2 {width: 16.66%;}
@@ -171,12 +188,3 @@ strong {
 	justify-content: center;
 }
 
-img.float-left {
-	float: left; 
-	margin: 0px 15px 15px 0px;
-}
-
-img.float-right {
-	float: right; 
-	margin: 0px 15px 15px 0px;
-}
