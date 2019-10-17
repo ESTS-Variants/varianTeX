@@ -1,18 +1,4 @@
-I"�<h2 id="information-for-authors">Information for Authors</h2>
-<p>As from issue 15, authors contributing to <a href="https://journals.openedition.org/variants">Variants</a> can also submit their articles or reviews in LaTeX format. For some, this may mean a new way of working. At first sight, a LaTeX file looks rather daunting and indeed it takes some getting used to. Luckily there are many great introductions and handy templates to get you started. And there are userfriendly applications like <a href="https://overleaf.com">Overleaf</a> that will help you write and visualize LaTeX.</p>
-
-<p>If you are new to these technologies, and want to learn more about LaTeX and Overleaf, please check out our <a href="https://github.com/WoutDLN/LaTeXJournal_Variants/wiki/FAQ">FAQ</a> before continuing here. In what follows, we will explain step-by-step how to work with the Variants template in Overleaf.</p>
-
-<h3 id="step-1-creating-an-overleaf-account">Step 1. Creating an Overleaf-account</h3>
-<p>In a web browser of your choice, visit <a href="https://overleaf.com">https://overleaf.com/</a> and click on <em>Register</em> in the upper right corner. You have the option to log in with a social media-account, but we recommend you register with your email address. Once you have registered, you are taken to a welcome screen in which you can choose from three options: take a look at the templates, go to the LaTeX help guide or create a new project. We will be using a template that was specifically developed for authors of the <em>Variants</em> Journal.</p>
-
-<p>If you already know LaTeX and prefer to use your own (open source) software to compose your submission, you can skip Step 2 and <a href="https://github.com/WoutDLN/Variants-For-Authors">download the source of our Variants For Authors template from GitHub</a>.</p>
-
-<h3 id="step-2-opening-the-variants-template">Step 2. Opening the Variants Template</h3>
-<p>Once you have created an account, you can follow <a href="https://www.overleaf.com/latex/templates/submission-template-to-variants-for-authors/znsqffgrvshv">this link to the Overleaf Template we designed for our Authors</a>. If you’re not logged in yet, do so now (top right corner), and press the <strong>Open as Template</strong> button. This will start a new LaTeX project in your Overleaf Account, that already includes the bare-bones structure of our template.</p>
-
-<h3 id="step-3-navigating-the-template">Step 3. Navigating the Template</h3>
-<p>Once you have opened the template, you will find template’s tree-structure with drop-down menus on the left.  The template will open in the <code class="highlighter-rouge">tex</code> file <code class="highlighter-rouge">main.tex</code>.</p>
+I"<p>Once you have opened the template, you will find template’s tree-structure with drop-down menus on the left.  The template will open in the <code class="highlighter-rouge">tex</code> file <code class="highlighter-rouge">main.tex</code>.</p>
 
 <figure class="float-left">
 	<img src="assets/img/templatestructure.png" />
