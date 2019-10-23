@@ -38,9 +38,6 @@ body {
 	margin:.15vw;
 }
 
-.faqsidebar {
-	font-size: 4vw;
-}
 
 pre {
 	background-color: rgba(71,178,163,0.25);
@@ -79,24 +76,23 @@ figure {
 	code{font-size: 1.75vw;}
 	.footer {font-size: 1vw;}
 	figure {font-size: 1vw;}
-	.faqsidebar {
-		display: none;
-		}
     .footer img {
 		width: 1vw;
 		margin:.15vw;
 	}	
-	.sticky {
+	.stickyscript {
 		font-size: 1.5vw;
-		position: fixed;
-  		top: 0;
+  		position: absolute;
   		right: 0;
   		width: 100%;
   		display: block;
+  		visibility: hidden; 
 		}
-	.sticky + .content {
-  		padding-top: 102px;
-		}
+	.stuck {
+  		position:fixed;
+  		top:0;
+  		visibility: visible; 
+	}	
 	.float-left {
 		float: left; 
 		padding: 0px 2vh 2vh 0px;

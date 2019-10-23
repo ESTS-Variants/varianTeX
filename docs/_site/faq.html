@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>faq</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/jquery.waypoints.min.js"></script>
+  <script src="assets/js/shortcuts/sticky.min.js"></script>
 </head>        
   <body>
          <div class="row" id="header">
@@ -24,19 +27,19 @@
     		<div class="flex-container">
   			
     			<div class="nav-item">
-    				<a href="/VariantX/" >Home</a>
+    				<a href="/variantx/" >Home</a>
     			</div>
   			
     			<div class="nav-item">
-    				<a href="/VariantX/foreditors.html" >For Editors</a>
+    				<a href="/variantx/foreditors.html" >For Editors</a>
     			</div>
   			
     			<div class="nav-item">
-    				<a href="/VariantX/forauthors.html" >For Authors</a>
+    				<a href="/variantx/forauthors.html" >For Authors</a>
     			</div>
   			
     			<div class="nav-item">
-    				<a href="/VariantX/faq.html" class="current">FAQ</a>
+    				<a href="/variantx/faq.html" class="current">FAQ</a>
     			</div>
   			
  			</div>
@@ -46,7 +49,7 @@
 </div>
       <div class="row" id="content">
          <div class="col-3">
-	<div class="col-3 faqsidebar" id="stickysidebar">
+	<div class="col-3 stickyscript" id="stickysidebar">
 	<h4 style="text-align: center">Jump To:</h4>
 	<ul>
 		
@@ -108,18 +111,11 @@
 </div>
 
          <script>
-	window.onscroll = function() {myFunction()};
+$(document).ready(function(){
 
-	var header = document.getElementById("stickysidebar");
-	var sticky = header.offsetTop;
-
-	function myFunction() {
-	  if (window.pageYOffset > sticky) {
-	    header.classList.add("sticky");
-	  } else {
-	    header.classList.remove("sticky");
-	  }
-	}
+	var sticky = new Waypoint.Sticky({
+		element: $('.stickyscript')[0]	})
+})
 </script>
   </body>
 </html>

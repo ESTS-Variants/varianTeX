@@ -13,8 +13,6 @@ body { background-color: #41B3A3xxx; padding: 1vw; font-family: Palatino,Palatin
 
 .footer img { width: 4vw; margin: .15vw; }
 
-.faqsidebar { font-size: 4vw; }
-
 pre { background-color: rgba(71, 178, 163, 0.25); border-radius: 5px; padding: 5px; /* vertical scrollbar if pre-div overflows */ overflow: auto; word-break: normal !important; word-wrap: normal !important; white-space: pre !important; }
 
 code { font-size: 4vw; color: #c38d9e; }
@@ -29,10 +27,9 @@ figure { max-width: 100%; margin: 0; font-size: 3vw; text-align: center; color: 
   code { font-size: 1.75vw; }
   .footer { font-size: 1vw; }
   figure { font-size: 1vw; }
-  .faqsidebar { display: none; }
   .footer img { width: 1vw; margin: .15vw; }
-  .sticky { font-size: 1.5vw; position: fixed; top: 0; right: 0; width: 100%; display: block; }
-  .sticky + .content { padding-top: 102px; }
+  .stickyscript { font-size: 1.5vw; position: absolute; right: 0; width: 100%; display: block; visibility: hidden; }
+  .stuck { position: fixed; top: 0; visibility: visible; }
   .float-left { float: left; padding: 0px 2vh 2vh 0px; max-width: 33%; }
   .float-right { float: right; margin: 0px 15px 15px 0px; max-width: 33%; }
   .col-1 { width: 8.33%; }
