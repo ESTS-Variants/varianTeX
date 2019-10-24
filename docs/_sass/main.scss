@@ -86,12 +86,12 @@ figure {
   		right: 0;
   		width: 100%;
   		display: block;
-  		visibility: hidden; 
+  	/*	visibility: hidden; */
 		}
 	.stuck {
   		position:fixed;
   		top:0;
-  		visibility: visible; 
+  	/*	visibility: visible; */
 	}	
 	.float-left {
 		float: left; 

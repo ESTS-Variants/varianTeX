@@ -28,8 +28,8 @@ figure { max-width: 100%; margin: 0; font-size: 3vw; text-align: center; color: 
   .footer { font-size: 1vw; }
   figure { font-size: 1vw; }
   .footer img { width: 1vw; margin: .15vw; }
-  .stickyscript { font-size: 1.5vw; position: absolute; right: 0; width: 100%; display: block; visibility: hidden; }
-  .stuck { position: fixed; top: 0; visibility: visible; }
+  .stickyscript { font-size: 1.5vw; position: absolute; right: 0; width: 100%; display: block; /*	visibility: hidden; */ }
+  .stuck { position: fixed; top: 0; /*	visibility: visible; */ }
   .float-left { float: left; padding: 0px 2vh 2vh 0px; max-width: 33%; }
   .float-right { float: right; margin: 0px 15px 15px 0px; max-width: 33%; }
   .col-1 { width: 8.33%; }
