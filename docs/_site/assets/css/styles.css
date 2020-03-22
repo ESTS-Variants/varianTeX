@@ -21,14 +21,14 @@ figure { max-width: 100%; margin: 0; font-size: 3vw; text-align: center; color: 
 
 @media only screen and (min-width: 768px) { /* For desktop: */
   [class*="col-"] { float: left; padding: 15px; }
-  body { font-size: 2vw; }
+  body { font-size: 1.5vw; }
   #header h1 { font-size: 8vw; }
-  pre { font-size: 1.75vw; }
-  code { font-size: 1.75vw; }
+  pre { font-size: 1.25vw; }
+  code { font-size: 1.25vw; }
   .footer { font-size: 1vw; }
   figure { font-size: 1vw; }
   .footer img { width: 1vw; margin: .15vw; }
-  .stickyscript { font-size: 1.5vw; position: absolute; right: 0; width: 100%; display: block; /*	visibility: hidden; */ }
+  .stickyscript { font-size: 1.25vw; position: absolute; right: 0; width: 100%; display: block; /*	visibility: hidden; */ }
   .stuck { position: fixed; top: 0; /*	visibility: visible; */ }
   .float-left { float: left; padding: 0px 2vh 2vh 0px; max-width: 33%; }
   .float-right { float: right; margin: 0px 15px 15px 0px; max-width: 33%; }

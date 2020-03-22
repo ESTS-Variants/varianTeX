@@ -1,0 +1,35 @@
+I",<figure class="float-left">
+	<img src="assets/img/templatestructure.png" style="height:46vh" />
+	<figcaption>Navigation menu for the template in Overleaf.</figcaption>
+</figure>
+
+<p>Once you have opened the template, you will find template’s tree-structure with drop-down menus on the left.  The template will open in the <code class="highlighter-rouge">tex</code> file <code class="highlighter-rouge">main.tex</code>.</p>
+
+<p><code class="highlighter-rouge">main.tex</code> describes a series of commands that tie the document together. By clicking on the PDF icon on the top of the menu structure, you can have a look at how the document will be visualized, and by clicking on the ‘split screen’ icon (on the top right of your browser window) you can visualize both the code and the PDF side by side.</p>
+
+<p><code class="highlighter-rouge">main.tex</code> starts with referencing a number of formatting rules that are defined in <code class="highlighter-rouge"><span class="k">\documentclass</span></code> &amp; <code class="highlighter-rouge">\include{preamble/all}</code>, and then opens the document:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[]</span><span class="p">{</span>scrbook<span class="p">}</span>   
+<span class="k">\include</span><span class="p">{</span>preamble/all<span class="p">}</span>
+
+<span class="nt">\begin{document}</span>
+<span class="k">\sloppy</span>                         <span class="c">% preferences more space between words over overrunning margins</span>
+<span class="k">\lefthyphenmin</span>=3                <span class="c">% suppresses hyphenation after only 1 or 2 characters</span>
+
+<span class="k">\pagenumbering</span><span class="p">{</span>roman<span class="p">}</span>           
+<span class="k">\tableofcontents</span>  
+<span class="k">\thispagestyle</span><span class="p">{</span>empty<span class="p">}</span>
+<span class="k">\pagenumbering</span><span class="p">{</span>arabic<span class="p">}</span>
+
+<span class="k">\part</span><span class="p">{</span>Essays<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>essays/my-essay<span class="p">}</span>
+<span class="c">% \include{essays/martinez}     % uncomment to visualize the sample essay</span>
+
+<span class="k">\part</span><span class="p">{</span>Reviews<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>reviews/my-review<span class="p">}</span>
+
+<span class="k">\include</span><span class="p">{</span>back/authors<span class="p">}</span>
+<span class="nt">\end{document}</span>
+</code></pre></div></div>
+<p>As you may have guessed, the <code class="highlighter-rouge">\include</code> command allows us to <em>include</em> a number of different documents (also <code class="highlighter-rouge">.tex</code> files) in the template’s larger structure. <code class="highlighter-rouge">include{preamble/all}</code>, for example, will include the <code class="highlighter-rouge">all.tex</code> file that can be found in the <code class="highlighter-rouge">preamble</code> folder in the navigation menu. Similarly, the two documents that we will be working with (<code class="highlighter-rouge">my-essay.tex</code> and <code class="highlighter-rouge">my-review.tex</code>) can be respectively be found in the <code class="highlighter-rouge">essays</code> and <code class="highlighter-rouge">reviews</code> folders. Since they are both referenced in <code class="highlighter-rouge">main.tex</code> file, they will also be included in the PDF we are generating.</p>
+:ET
