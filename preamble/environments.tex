@@ -34,6 +34,10 @@
     \chapter[\normalfont\textbf{\emph{\thecontributor}}: \thecontribution]{\vspace{-4em}\Large\normalfont\thecontribution\linebreak\normalsize\begin{flushright}\emph{\thecontributor}\end{flushright}}    
     % reset the section counter for each paper
     \setcounter{section}{0}  
+    % reset the figure counter for each paper
+    \renewcommand\thefigure{\arabic{figure}}    
+    % reset the table counter for each paper
+    \renewcommand\thetable{\arabic{table}} 
     % no running title on first page, page number center bottom instead, include copyright statement
     \thispagestyle{contributiontitlepage}
     % formatting for the bibliography
@@ -100,3 +104,8 @@
 \setlength{\parindent}{0pt} \small\raggedleft}{%
 \vskip 2em
 }{}
+
+
+% Example
+\newcounter{example}[chapter]
+\newenvironment{example}[1][]{\refstepcounter{example}\begin{quote} \rmfamily}{\begin{flushright}(Example~\theexample)\end{flushright}\end{quote}}
