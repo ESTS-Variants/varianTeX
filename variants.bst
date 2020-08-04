@@ -4,7 +4,7 @@
 %%
 %% The original source files were:
 %%
-%% merlin.mbs  (with options: `ay,nat,pres,pres-sc,vonx,nm-revv1,jnrlst,nmdash,nmd-3,nmft,nmft-sc,nmand-rm,keyxyr,dt-beg,aymth,note-yr,tit-qq,pgsep-c,num-xser,ser-vol,ser-ed,add-pub,pre-pub,isbn,issn,doi,edby,ed,xedn,revdata,eprint,url,url-blk,nfss,')
+%% merlin.mbs  (with options: `ay,nat,pres,pres-sc,vonx,nm-revv1,jnrlst,nmdash,nmd-3,nmft,nmft-sc,nmand-rm,keyxyr,dt-beg,aymth,note-yr,tit-qq,volp-com,pgsep-c,jwdpg,num-xser,ser-vol,ser-ed,jnm-x,add-pub,pre-pub,isbn,issn,doi,edby,ed,ord,revdata,eprint,url,url-blk,nfss,')
 %% ----------------------------------------
 %% *** A Citation style for Variants, the Journal of the European Society for Textual Scholarship ***
 %% 
@@ -81,6 +81,7 @@ ENTRY
     title
     type
     url
+    urldate
     volume
     year
   }
@@ -279,6 +280,33 @@ FUNCTION {bbl.mthesis}
 FUNCTION {bbl.phdthesis}
 { "Ph.D. thesis" }
 
+FUNCTION {bbl.first}
+{ "1st" }
+
+FUNCTION {bbl.second}
+{ "2nd" }
+
+FUNCTION {bbl.third}
+{ "3rd" }
+
+FUNCTION {bbl.fourth}
+{ "4th" }
+
+FUNCTION {bbl.fifth}
+{ "5th" }
+
+FUNCTION {bbl.st}
+{ "st" }
+
+FUNCTION {bbl.nd}
+{ "nd" }
+
+FUNCTION {bbl.rd}
+{ "rd" }
+
+FUNCTION {bbl.th}
+{ "th" }
+
 MACRO {jan} {"January"}
 
 MACRO {feb} {"February"}
@@ -302,6 +330,27 @@ MACRO {oct} {"October"}
 MACRO {nov} {"November"}
 
 MACRO {dec} {"December"}
+
+FUNCTION {eng.ord}
+{ duplicate$ "1" swap$ *
+  #-2 #1 substring$ "1" =
+     { bbl.th * }
+     { duplicate$ #-1 #1 substring$
+       duplicate$ "1" =
+         { pop$ bbl.st * }
+         { duplicate$ "2" =
+             { pop$ bbl.nd * }
+             { "3" =
+                 { bbl.rd * }
+                 { bbl.th * }
+               if$
+             }
+           if$
+          }
+       if$
+     }
+   if$
+}
 
 MACRO {acmcs} {"ACM Computing Surveys"}
 
@@ -854,10 +903,63 @@ FUNCTION {format.number.series}
     { "" }
   if$
 }
+FUNCTION {is.num}
+{ chr.to.int$
+  duplicate$ "0" chr.to.int$ < not
+  swap$ "9" chr.to.int$ > not and
+}
+
+FUNCTION {extract.num}
+{ duplicate$ 't :=
+  "" 's :=
+  { t empty$ not }
+  { t #1 #1 substring$
+    t #2 global.max$ substring$ 't :=
+    duplicate$ is.num
+      { s swap$ * 's := }
+      { pop$ "" 't := }
+    if$
+  }
+  while$
+  s empty$
+    'skip$
+    { pop$ s }
+  if$
+}
+
+FUNCTION {convert.edition}
+{ extract.num "l" change.case$ 's :=
+  s "first" = s "1" = or
+    { bbl.first 't := }
+    { s "second" = s "2" = or
+        { bbl.second 't := }
+        { s "third" = s "3" = or
+            { bbl.third 't := }
+            { s "fourth" = s "4" = or
+                { bbl.fourth 't := }
+                { s "fifth" = s "5" = or
+                    { bbl.fifth 't := }
+                    { s #1 #1 substring$ is.num
+                        { s eng.ord 't := }
+                        { edition 't := }
+                      if$
+                    }
+                  if$
+                }
+              if$
+            }
+          if$
+        }
+      if$
+    }
+  if$
+  t
+}
 
 FUNCTION {format.edition}
 { edition duplicate$ empty$ 'skip$
     {
+      convert.edition
       output.state mid.sentence =
         { "l" }
         { "t" }
@@ -909,10 +1011,16 @@ FUNCTION {format.journal.pages}
     { swap$ duplicate$ empty$
         { pop$ pop$ format.pages }
         {
-          ":" *
+          ", " *
           swap$
           n.dashify
+          pages multi.page.check
+            'bbl.pages
+            'bbl.page
+          if$
+          swap$ tie.or.space.prefix
           "pages" bibinfo.check
+          * *
           *
         }
       if$
@@ -924,7 +1032,7 @@ FUNCTION {format.journal.eid}
   duplicate$ empty$ 'pop$
     { swap$ duplicate$ empty$ 'skip$
       {
-          ":" *
+          ", " *
       }
       if$
       swap$ *
@@ -1004,6 +1112,19 @@ FUNCTION {format.in.ed.booktitle}
     }
   if$
 }
+
+% ADDED FUNCTION FOR EDITORS AND AUTHORS IN BOOKS
+FUNCTION {format.editors.nocaps}
+{ editor "editor" format.names.ed duplicate$ empty$ 'skip$
+    {
+      "," *
+      " " *
+      get.bbl.editor
+      *
+    }
+  if$
+}
+
 FUNCTION {format.thesis.type}
 { type duplicate$ empty$
     'pop$
@@ -1102,6 +1223,7 @@ FUNCTION {article}
       "journal" bibinfo.check
       emphasize
       "journal" output.check
+      add.blank
       format.vol.num.pages output
     }
     { format.article.crossref output.nonnull
@@ -1136,6 +1258,8 @@ FUNCTION {book}
   format.btitle "title" output.check
   crossref missing$
     { format.bvolume output
+      new.block
+      format.editors.nocaps output
       new.block
       format.number.series output
       new.sentence
