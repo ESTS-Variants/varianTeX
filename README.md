@@ -1,11 +1,10 @@
 [![DOI](https://zenodo.org/badge/215016822.svg)](https://zenodo.org/badge/latestdoi/215016822)
 
-[Official Website](https://variantex.woutdillen.be)
 # varianTeX
 
 ## About the Template
 
-This is a reusable LaTeX Template for journals in the Humanities. It was originally developed for [Variants](https://journals.openedition.org/variants/) (the journal of the [European Society for Textual Scholarship](https://textualscholarship.eu/)) by [Wout Dillen](https://github.com/WoutDLN).
+[varianTeX](https://variantex.woutdillen.be) is a reusable LaTeX Template for journals in the Humanities. It was originally developed for [Variants](https://journals.openedition.org/variants/) (the journal of the [European Society for Textual Scholarship](https://textualscholarship.eu/)) by [Wout Dillen](https://github.com/WoutDLN).
 
 Although the template and its design choices are documented in the code itself, a [documentation website](https://woutdln.github.com/varianTeX) with more user-friendly instructions on how to use it is currently under construction.
 
