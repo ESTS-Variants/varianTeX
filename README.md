@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/215016822.svg)](https://zenodo.org/badge/latestdoi/215016822)
 
-[Official Website](https://variantex.woutdln.be)
+[Official Website](https://variantex.woutdillen.be)
 # varianTeX
 
 ## About the Template
