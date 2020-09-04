@@ -11,3 +11,5 @@ Although the template and its design choices are documented in the code itself, 
 ## About the Author
 
 This template was developed by [Wout Dillen](https://github.com/WoutDLN), a postdoctoral researcher at the [University of Antwerp](https://uantwerpen.be) as part of his position as the university's CLARIAH-VL coordinator. He is also the General Editor of the Variants journal from Issue 15 onwards. 
+
+Check out our [official website](https://variantex.woutdillen.be)
