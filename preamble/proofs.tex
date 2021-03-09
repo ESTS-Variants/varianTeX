@@ -1,28 +1,19 @@
-\usepackage{ifdraft}
-% uncommenting line 2 in main.tex will activate the following proof formatting:
+% !!!!!!!!!!!!!
+% !!!CAUTION!!!
+% !!!!!!!!!!!!!
 
-\ifdraft{
-%
-% 1. Add a watermark
-%
-    \usepackage{draftwatermark} 
-    \SetWatermarkText{PROOFS}       
-%
-% 2. Add line numbers
-%
-% !! UNCOMMENT WITH CAUTION !! 
-% The following option throws nasty errors in OVERLEAF, that are only solved after the servers reset (overnight). 
-% It does seem to work in TeXShop. 
-% 
-%    \usepackage[switch, modulo, pagewise]{lineno} 
-%    \linenumbers                   
-}{}                                      
+% The code below works, but Overleaf currently throws up nasty errors if you try reverting your document back to its original state (without watermark and page numbers). This seems to be a problem with the .aux files that are generated in the back end, that -- once generated with these proofing annotations -- remain cached until Overleaf's servers are reset (overnight). 
 
-% this alternative doesn't work yet...
-%\makeatletter
-% \newsavebox{\@linebox}
-% \savebox{\@linebox}[3em][t]{\parbox[t]{3em}{%
-%   \@tempcnta\@ne\relax
-%   \loop{\underline{\scriptsize\the\@tempcnta}}\\
-%     \advance\@tempcnta by \@ne\ifnum\@tempcnta<48\repeat}}
-%\makeatother
+% If you activate this preamble file (by uncommenting the corresponding line in main.tex), be prepared to have the watermarks and line numbers added to your document for the rest of the day. When you are done working for the day, comment the line in again, so that it does not automatically generate the watermark and page numbers the next time you open the document. 
+
+% If you have prematurely activated this file, and need a clean version of your text before the end of your day, a workaround would be to comment it in again, and make a copy of the entire document in Overleaf. 
+
+% The code does not seem to cause the same issues if you are generating the document yourself (e.g. through TeXshop), and appears to be purely an Overleaf bug. 
+
+% Add Watermark
+\usepackage{draftwatermark} 
+\SetWatermarkText{PROOFS}     
+
+% Add Line Numbers
+\usepackage[switch, modulo, pagewise]{lineno}
+\linenumbers 
