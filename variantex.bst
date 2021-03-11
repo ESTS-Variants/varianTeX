@@ -58,6 +58,7 @@ ENTRY
     booktitle
     chapter
     collaboration
+    collaborator % added
     doi
     edition
     editor
@@ -1093,9 +1094,18 @@ FUNCTION {format.booktitle}
   booktitle "booktitle" bibinfo.check
   emphasize
 }
+% Added collaborator function for book authors and series authors
+FUNCTION {format.collaborator}
+{
+  collaborator "collaborator" bibinfo.check
+}
+% called the collaborator function in @incollection
 FUNCTION {format.in.ed.booktitle}
-{ format.booktitle duplicate$ empty$ 'skip$
-    {
+{ 
+      format.booktitle duplicate$ empty$ 'skip$
+    { format.collaborator duplicate$ empty$ 'pop$
+        { ", authored by " swap$ * * }
+      if$
       format.bvolume duplicate$ empty$ 'pop$
         { ", " swap$ * * }
       if$
