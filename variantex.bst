@@ -1125,13 +1125,14 @@ FUNCTION {format.in.ed.booktitle}
 
 % ADDED FUNCTION FOR EDITORS AND AUTHORS IN BOOKS
 FUNCTION {format.editors.nocaps}
-{ editor "editor" format.names.ed duplicate$ empty$ 'skip$
-    {
-      "," *
-      " " *
-      get.bbl.editor
-      *
-    }
+{       editor "editor" format.names.ed duplicate$ empty$ 'pop$
+        {
+          bbl.edby
+          " " * swap$ *
+          swap$
+          "," *
+          " " * swap$
+          * }
   if$
 }
 
@@ -1268,8 +1269,12 @@ FUNCTION {book}
   format.btitle "title" output.check
   crossref missing$
     { format.bvolume output
-      new.block
-      format.editors.nocaps output
+      author empty$  % ONLY ADD EDITOR IF AUTHOR IS EMPTY
+        {  }
+        { new.block
+          format.editors.nocaps output 
+        }
+      if$
       new.block
       format.number.series output
       new.sentence
