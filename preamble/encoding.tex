@@ -1,7 +1,10 @@
 \usepackage[L7x, T1]{fontenc}           % use 8-bit T1 fonts
 \usepackage[utf8]{inputenc}             % allow utf-8 input
+\usepackage[full]{textcomp}                   % allows \textrightarrow etc.
+
 % languages
 \usepackage[main=english, lithuanian, latin]{babel}
+
 % special characters
 \DeclareUnicodeCharacter{2D7}{}         % allow ¡ character
 \DeclareUnicodeCharacter{45E}{}         % allow ў character
@@ -10,4 +13,8 @@
 %\DeclareUnicodeCharacter{010D}{}        % allow č character
 \DeclareUnicodeCharacter{017F}{}        % allow ſ character
 \usepackage{textalpha}                  % allows for greek characters in text e.g. \textalpha = α
-\usepackage{textcomp}                   % allows \textrightarrow etc.
+
+% uncomment to allow for ſ character ('long s') through new \longs command. 
+% May throw up warnings, but should work
+% \usepackage[veryoldstyle]{kpfonts}      
+% \newcommand{\longs}{{\fontfamily{jkpvos}\selectfont{}s}} 
