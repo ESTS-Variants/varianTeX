@@ -447,7 +447,7 @@ FUNCTION {format.url}
     { "\urlprefix\url{" swap$ * "}" * 
         urldate duplicate$ empty$
         { pop$ }
-        { "~(Accessed: "  swap$ * ")" * *}
+        { "\newblock ~(Accessed: "  swap$ * ")" * *}
       if$
     }
   if$
