@@ -630,7 +630,7 @@ FUNCTION {format.doi}
     { "" }
     {
       new.block
-      "\doi{" doi * "}" *
+      "\mbox{doi: \url{" doi * "}}" *
     }
   if$
 }
