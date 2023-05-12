@@ -1,0 +1,422 @@
+%%%% CLASS OPTIONS 
+
+\KOMAoptions{
+    fontsize=10pt,              % set default font size
+    DIV=calc,
+    titlepage=false,
+    paper=150mm:220mm,
+    twoside=true, 
+    twocolumn=false,
+    toc=chapterentryfill,       % for dots: chapterentrydotfill
+    parskip=false,              % space between paragraphs. "full" gives more space; "false" uses indentation instead
+    headings=small,
+    bibliography=leveldown,     % turns the Bibliography into a \section rather than a \chapter (so it appears on the same page)
+}
+
+%%%% PAGE SIZE
+
+\usepackage[
+    top=23mm,
+    left=20mm,
+    height=173mm,
+    width=109mm,
+    ]{geometry}
+
+\setlength{\marginparwidth}{1.25cm} % sets up acceptable margin for \todonotes package (see preamble/packages.tex).
+
+%%%% PACKAGES
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[unicode]{hyperref}  % hyperlinks
+\usepackage{booktabs}           % professional-quality tables
+\usepackage{nicefrac}           % compact symbols for 1/2, etc.
+%\usepackage{microtype}          % microtypography
+\usepackage{lipsum}             % lorem ipsum at the ready
+\usepackage{graphicx}           % for figures
+\usepackage{footmisc}           % makes symbol footnotes possible
+\usepackage{ragged2e}
+\usepackage{changepage}         % detect odd/even pages
+\usepackage{array}
+\usepackage{float}              % get figures etc. to stay where they are with [H]
+\usepackage{subfigure}          % \subfigures witin a \begin{figure}
+\usepackage{longtable}          % allows for tables that stretch over multiple pages
+\setlength{\marginparwidth}{2cm}
+\usepackage[textsize=footnotesize]{todonotes} % enables \todo's for editors
+\usepackage{etoolbox}           % supplies commands like \AtBeginEnvironment and \atEndEnvironment
+\usepackage{ifdraft}            % switches on proofreading options in the draft mode
+\usepackage{rotating}           % provides sidewaysfigure environment
+\usepackage{media9}             % allows for video in the pdf
+\usepackage{xurl}               % allows URLs to (line)break ANYWHERE
+
+%%%% ENCODING
+
+\usepackage[L7x, T1]{fontenc}           % use 8-bit T1 fonts
+\usepackage[utf8]{inputenc}             % allow utf-8 input
+\usepackage[full]{textcomp}                   % allows \textrightarrow etc.
+
+% languages
+
+\usepackage[main=english, lithuanian, latin, hindi]{babel}
+\languageattribute{hindi}{modernhindi}
+%\usepackage{devanagari}
+
+% special characters
+\DeclareUnicodeCharacter{2D7}{}         % allow ¡ character
+\DeclareUnicodeCharacter{45E}{}         % allow ў character
+\DeclareUnicodeCharacter{2032}{}        % allow ′ character
+\DeclareUnicodeCharacter{22EE}{}        % allow ⋮ character
+%\DeclareUnicodeCharacter{010D}{}        % allow č character
+\DeclareUnicodeCharacter{017F}{}        % allow ſ character
+\DeclareUnicodeCharacter{03F8}{}        % allow ϸ character
+\DeclareUnicodeCharacter{0915}{}        % allow क character
+\DeclareUnicodeCharacter{093E}{}        % allow  ा character
+\DeclareUnicodeCharacter{092E}{}        % allow म character
+\usepackage{textalpha}                  % allows for greek characters in text e.g. \textalpha = α
+
+% uncomment to allow for ſ character ('long s') through new \longs command. 
+% May throw up warnings, but should work
+% \usepackage[veryoldstyle]{kpfonts}      
+% \newcommand{\longs}{{\fontfamily{jkpvos}\selectfont{}s}} 
+
+%%%% FONTS
+
+% Palatino font options
+\usepackage{mathpazo}                   % Palatino in LaTeX math
+\usepackage{tgpagella}                  % Palatino font
+\newcommand{\ltfamily}{\familydefault}  % Makes sure LaTeX keeps using Palatino in Lithuanian 
+\addtokomafont{disposition}{\rmfamily}  % Palatino for titles etc.
+\setkomafont{descriptionlabel}{         % font for description lists    
+\usekomafont{captionlabel}\bfseries     % Palatino bold
+}
+\setkomafont{caption}{\footnotesize}    % smaller font size for captions
+% To make sure LaTeX keeps using Palatino in Lithuanian:
+% in OVERLEAF change the following \newcommand to \renewcommand
+% \newcommand{\ltfamily}{\familydefault} 
+
+\usepackage{mathabx}                    % allows for nicer looking \cup, \curvearrowbotright, etc. !!IMPORTANT!! These are math symbols and should be surrounded by $dollar signs$
+\usepackage[normalem]{ulem}                       % allows for strikethrough with \sout etc.
+
+%%%% ToC
+
+% No (sub)sections in TOC
+\setcounter{tocdepth}{0}                
+
+% Redefines chapter title formatting
+\makeatletter                               
+\def\@makechapterhead#1{
+  \vspace*{50\p@}%
+  {\parindent \z@ \normalfont
+    \interlinepenalty\@M
+    \Large\raggedright #1\par\nobreak%
+    \vskip 40\p@%
+  }}
+\makeatother
+% a bit more space between titles and page numbers in TOC
+
+\makeatletter   
+\renewcommand\@pnumwidth{2.5em} 
+\makeatother
+
+%%%% CONTRIBUTOR
+
+% Title and Author of individual contributions
+\makeatletter
+% paper/review author = contributor
+\newcommand\contributor[1]{\renewcommand\@contributor{#1}}
+\newcommand\@contributor{}
+\newcommand\thecontributor{\@contributor} 
+% paper/review title = contribution
+\newcommand\contribution[1]{\renewcommand\@contribution{#1}}
+\newcommand\@contribution{}
+\newcommand\thecontribution{\@contribution}
+% short contributor for running header
+\newcommand\shortcontributor[1]{\renewcommand\@shortcontributor{#1}}
+\newcommand\@shortcontributor{}
+\newcommand\theshortcontributor{\@shortcontributor} 
+% short title for running header
+\newcommand\shortcontribution[1]{\renewcommand\@shortcontribution{#1}}
+\newcommand\@shortcontribution{}
+\newcommand\theshortcontribution{\@shortcontribution}
+\makeatother
+
+%%%% COPYRIGHT
+
+% choose copyright license
+\usepackage[               
+    type={CC},
+    modifier={by},
+    version={4.0},
+]{doclicense}
+
+% define \copyrightstatement for ease of use
+\newcommand{\copyrightstatement}{
+         \doclicenseIcon \ \theyear. 
+         \doclicenseLongText            % includes a link
+}
+
+%%%% BIBTEX
+
+\usepackage[sort&compress,semicolon,authoryear,elide]{natbib} % for citations
+\usepackage{chapterbib}
+\bibliographystyle{variantex}
+%\setcitestyle{citesep={;}, aysep={}, yysep={;}, notesep={, }}
+\bibpunct%
+{(}% the opening bracket symbol, default = (
+{)}% the closing bracket symbol, default = )
+{;}% the punctuation between multiple citations, default = ;
+{a}% the letter `n' for numerical style, or `s' for numerical superscript style, any other letter for author-year, default = author-year
+{~}% the punctuation that comes between the author names and the year
+{;}% the punctuation that comes between years or numbers when common author lists are suppressed, default = ,
+
+%%%% ENVIRONMENTS
+% Environments
+\AtBeginEnvironment{quote}{\footnotesize\vskip 1em}
+\AtEndEnvironment{quote}{\vskip 1em}
+
+\setkomafont{caption}{\footnotesize}
+
+% Preface
+\newenvironment{preface}{
+    \phantomsection
+    \cleardoublepage
+    \addcontentsline{toc}{part}{Editors' Preface}
+    % enable running title
+    \pagestyle{preface}
+    % \chapter*{Editors' Preface}    
+    % reset the section counter for each paper
+    \setcounter{section}{0}  
+    % no running title on first page, page number center bottom instead
+    \thispagestyle{chaptertitlepage}
+}{}
+\AtEndEnvironment{preface}{%
+    %last page running header fix
+    \protect\thispagestyle{preface}
+}
+% Essays
+\newenvironment{paper}{
+    \phantomsection
+    % start every new paper on an uneven page 
+    \cleardoublepage
+    % enable running title
+    \pagestyle{fancy}
+    % change section numbering FROM [\chapter].[\section].[\subsection] TO [\section].[\subsection] ETC.
+    \renewcommand{\thesection}{\arabic{section}}
+    % mark chapter % add author + title to the TOC
+    \chapter[\normalfont\textbf{\emph{\thecontributor}}: \thecontribution]{\vspace{-4em}\Large\normalfont\thecontribution\linebreak\normalsize\begin{flushright}\emph{\thecontributor}\end{flushright}}    
+    % reset the section counter for each paper
+    \setcounter{section}{0}  
+    % reset the figure counter for each paper
+    \renewcommand\thefigure{\arabic{figure}}    
+    % reset the table counter for each paper
+    \renewcommand\thetable{\arabic{table}} 
+    % no running title on first page, page number center bottom instead, include copyright statement
+    \thispagestyle{contributiontitlepage}
+    % formatting for the bibliography
+    \bibliographystyle{variantex}
+
+}{}
+\AtBeginEnvironment{paper}{
+    % keeps running title from the first page:
+    \renewcommand*{\pagemark}{}%                            
+}
+\AtEndEnvironment{paper}{
+    % last page running header fix
+    \protect\thispagestyle{fancy}%                              
+}
+% Reviews
+\newenvironment{review}{
+    \phantomsection
+    % start every new paper on an uneven page 
+    \cleardoublepage
+    % enable running title
+    \pagestyle{reviews}
+    % change section numbering FROM [\chapter].[\section].[\subsection] TO [\section].[\subsection] ETC.
+    \renewcommand{\thesection}{\arabic{section}} 
+    % mark chapter % add author + title to the TOC
+    \chapter[\normalfont\textbf{\emph{\thecontributor}}: \thecontribution]{}    % reset the section counter for each paper
+    \setcounter{section}{0}  
+    % no running title on first page, page number center bottom instead, include copyright statement
+    \thispagestyle{contributiontitlepage}
+    % formatting for the bibliography
+    \bibliographystyle{variantex}
+}{}
+\AtBeginEnvironment{review}{
+% keeps running title from the first page
+    \renewcommand*{\pagemark}{}%                                   
+}
+\AtEndEnvironment{review}{
+    % author name(s)
+    \begin{flushright}\emph{\thecontributor}\end{flushright}
+    % last page running header fix
+    \protect\thispagestyle{reviews}                           
+}
+
+% Abstract
+\newenvironment{abstract}{% 
+\setlength{\parindent}{0pt} \begin{adjustwidth}{2em}{2em}\footnotesize\emph{\abstractname}: }{%
+\vskip 1em\end{adjustwidth}
+}{}
+
+% Keywords
+\newenvironment{keywords}{
+\setlength{\parindent}{0pt} \begin{adjustwidth}{2em}{2em}\footnotesize\emph{Keywords}: }{%
+\vskip 1em\end{adjustwidth}
+}{}
+
+% Review Abstract
+\newenvironment{reviewed}{% 
+\setlength{\parindent}{0pt}
+    \begin{adjustwidth}{2em}{2em}\footnotesize}{%
+\vskip 1em\end{adjustwidth}
+}{}
+
+% Motto
+\newenvironment{motto}{% 
+\setlength{\parindent}{0pt} \small\raggedleft}{%
+\vskip 2em
+}{}
+
+% Example
+\newcounter{example}[chapter]
+\newenvironment{example}[1][]{\refstepcounter{example}\begin{quote} \rmfamily}{\begin{flushright}(Example~\theexample)\end{flushright}\end{quote}}
+
+%%%% SECTIONOPTIONS
+
+% command for centering section headings
+\newcommand{\centerheading}[1]{   
+    \hspace*{\fill}#1\hspace*{\fill}
+}
+
+% Remove "Part #." from \part titles
+% KOMA default: \newcommand*{\partformat}{\partname~\thepart\autodot}
+\renewcommand*{\partformat}{} 
+
+% No dots after figure or table numbers
+\renewcommand*{\figureformat}{\figurename~\thefigure}
+\renewcommand*{\tableformat}{\tablename~\thetable}
+
+% paragraph handling
+\setparsizes%
+    {1em}% indent
+    {0pt}% maximum space between paragraphs
+    {0pt plus 1fil}% last line not justified
+    
+
+% In the "Authors" section, author names are put in the \paragraph{} headings. To reduce the space after these  headings, the default {-1em} has been changed to {-.4em} below.
+\makeatletter
+\renewcommand\paragraph{\@startsection {paragraph}{4}{\z@ }{3.25ex \@plus 1ex \@minus .2ex}{-.4em}{\normalfont \normalsize \bfseries }
+}
+\makeatother
+
+% add the following (uncommented) in environments where you want to count paragraph numbers in the margin
+%    \renewcommand*{\paragraphformat}{%
+%    \makebox[-4pt][r]{\footnotesize\theparagraph\autodot\enskip}
+%    }
+%    \renewcommand{\theparagraph}{\arabic{paragraph}}
+%    \setcounter{paragraph}{0}
+%    \setcounter{secnumdepth}{4}
+    
+%%%% HEADERFOOTER
+
+% running title
+\RequirePackage{fancyhdr}
+% cuts off running titles that are too long
+%\RequirePackage{truncate}
+% makes header as wide as geometry (SET SAME AS \TEXTWIDTH!)
+\setlength{\headwidth}{109mm} 
+% LO = Left Odd
+\fancyhead[LO]{\small\emph{\theshortcontributor} \hspace*{.5em} \theshortcontribution} 
+% RE = Right Even
+\fancyhead[RE]{\scshape{\small\theissue}}
+% LE = Left Even
+\fancyhead[LE]{\small\thepage}            
+% RE = Right Odd
+\fancyhead[RO]{\small\thepage}    
+\fancyfoot{}
+% no line under running title; cannot be \@z but needs to be 0pt
+\renewcommand{\headrulewidth}{0 pt} 
+
+% special style for authors pages
+\fancypagestyle{authors}{
+    \fancyhead[LO]{\small\textit{Authors}} 
+    \fancyhead[LE]{\small\thepage}            
+    \fancyhead[RE]{\scshape{\small\theissue}}
+    \fancyhead[RO]{\small\thepage}            
+    \fancyfoot{}
+}
+
+% special style for book reviews
+\fancypagestyle{reviews}{
+    \fancyhead[LO]{\small\textit{Book Reviews}} 
+    \fancyhead[LE]{\small\thepage}            
+    \fancyhead[RE]{\scshape{\small\theissue}}
+    \fancyhead[RO]{\small\thepage}            
+    \fancyfoot{}
+}
+
+% special style for Editors' preface.
+\fancypagestyle{preface}{
+    \fancyhead[LO]{\small\textit{Editors' Preface}} 
+    \fancyhead[LE]{\small\thepage}            
+    \fancyhead[RE]{\scshape{\small\theissue}}
+    \fancyhead[RO]{\small\thepage}            
+    \fancyfoot{}
+}
+% special style for first pages of contributions etc.
+% DOES include copyright statement
+\fancypagestyle{contributiontitlepage}{
+    \fancyhead[C]{\scriptsize\centering\copyrightstatement}
+    \fancyhead[L,R]{}
+    \fancyfoot[CE,CO]{\small\thepage}
+}
+% special style for first pages of other \chapters.
+% DOES NOT include copyright statement
+\fancypagestyle{chaptertitlepage}{
+    \fancyhead[C,L,R]{}
+    \fancyfoot[CE,CO]{\small\thepage}
+}
+% no page numbers on \part pages 
+\renewcommand*{\partpagestyle}{empty}
+
+%%%% FOOTNOTEFORMAT
+
+% footnotes
+\renewcommand{\footnoterule}{%
+    \kern .5em  % call this kerna
+    \hrule height 0.4pt width .2\columnwidth    % the .2 value made the footnote ruler (horizontal line) smaller (was at .4)
+    \kern .5em % call this kernb
+}
+\usepackage{footmisc}               
+\renewcommand{\footnotelayout}{
+    \hspace{1.5em}    % space between footnote mark and footnote text
+}    
+\newcommand{\mytodo}[1]{\textcolor{red}{#1}}
+
+%%%% CODESNIPPETS
+
+% colours for code notations
+\usepackage{listings}       
+	\renewcommand\lstlistingname{Quelltext} 
+	\lstset{                    % basic formatting (bash etc.)
+	       basicstyle=\ttfamily,
+ 	       showstringspaces=false,
+	       commentstyle=\color{BrickRed},
+	       keywordstyle=\color{RoyalBlue}
+	}
+	\lstdefinelanguage{XML}{     % specific XML formatting overrides
+		  basicstyle=\ttfamily,
+		  morestring=[s]{"}{"},
+		  morecomment=[s]{?}{?},
+		  morecomment=[s]{!--}{--},
+		  commentstyle=\color{OliveGreen},
+		  moredelim=[s][\color{Black}]{>}{<},
+		  moredelim=[s][\color{RawSienna}]{\ }{=},
+		  stringstyle=\color{RoyalBlue},
+ 		  identifierstyle=\color{Plum}
+	}
+    % HOW TO USE? BASH EXAMPLE
+    %   \begin{lstlisting}[language=bash]
+    %   #some comment
+    %   cd Documents
+    %   \end{lstlisting}
+
