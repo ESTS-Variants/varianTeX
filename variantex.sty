@@ -54,11 +54,24 @@
 \usepackage[utf8]{inputenc}             % allow utf-8 input
 \usepackage[full]{textcomp}                   % allows \textrightarrow etc.
 
-% languages
+% LANGUAGES
 
-\usepackage[main=english, lithuanian, latin, hindi]{babel}
-\languageattribute{hindi}{modernhindi}
+\usepackage[
+    main=english, 
+    lithuanian,
+%   hindi,                      % incompatible with BibLaTeX
+%   latin                       % incompatible with BibLaTeX
+]{babel}
+%\languageattribute{hindi}{modernhindi}
 %\usepackage{devanagari}
+
+% biblatex
+\usepackage[
+    authordate,
+    backend=biber,
+    natbib=true,
+    ]{biblatex-chicago}
+\usepackage{csquotes}
 
 % special characters
 \DeclareUnicodeCharacter{2D7}{}         % allow ¡ character
@@ -156,17 +169,17 @@
 
 %%%% BIBTEX
 
-\usepackage[sort&compress,semicolon,authoryear,elide]{natbib} % for citations
-\usepackage{chapterbib}
-\bibliographystyle{variantex}
+% \usepackage[sort&compress,semicolon,authoryear,elide]{natbib} % for citations
+% \usepackage{chapterbib}
+% \bibliographystyle{variantex}
 %\setcitestyle{citesep={;}, aysep={}, yysep={;}, notesep={, }}
-\bibpunct%
-{(}% the opening bracket symbol, default = (
-{)}% the closing bracket symbol, default = )
-{;}% the punctuation between multiple citations, default = ;
-{a}% the letter `n' for numerical style, or `s' for numerical superscript style, any other letter for author-year, default = author-year
-{~}% the punctuation that comes between the author names and the year
-{;}% the punctuation that comes between years or numbers when common author lists are suppressed, default = ,
+% \bibpunct%
+% {(}% the opening bracket symbol, default = (
+% {)}% the closing bracket symbol, default = )
+% {;}% the punctuation between multiple citations, default = ;
+% {a}% the letter `n' for numerical style, or `s' for numerical superscript style, any other letter for author-year, default = author-year
+% {~}% the punctuation that comes between the author names and the year
+% {;}% the punctuation that comes between years or numbers when common author lists are suppressed, default = ,
 
 %%%% ENVIRONMENTS
 % Environments
@@ -177,6 +190,7 @@
 
 % Preface
 \newenvironment{preface}{
+    \newrefsection
     \phantomsection
     \cleardoublepage
     \addcontentsline{toc}{part}{Editors' Preface}
@@ -194,6 +208,7 @@
 }
 % Essays
 \newenvironment{paper}{
+    \newrefsection
     \phantomsection
     % start every new paper on an uneven page 
     \cleardoublepage
@@ -212,7 +227,6 @@
     % no running title on first page, page number center bottom instead, include copyright statement
     \thispagestyle{contributiontitlepage}
     % formatting for the bibliography
-    \bibliographystyle{variantex}
 
 }{}
 \AtBeginEnvironment{paper}{
@@ -225,6 +239,7 @@
 }
 % Reviews
 \newenvironment{review}{
+    \newrefsection
     \phantomsection
     % start every new paper on an uneven page 
     \cleardoublepage
@@ -238,7 +253,6 @@
     % no running title on first page, page number center bottom instead, include copyright statement
     \thispagestyle{contributiontitlepage}
     % formatting for the bibliography
-    \bibliographystyle{variantex}
 }{}
 \AtBeginEnvironment{review}{
 % keeps running title from the first page

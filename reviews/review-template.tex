@@ -125,7 +125,9 @@ See awesome Table~\ref{tab:table}.
 \end{itemize}
 
 \begin{flushleft}
-\bibliography{references/example-template} 
+\renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}
+\renewcommand*{\mkbibnamegiven}[1]{\textsc{#1}}
+\printbibliography
 \end{flushleft}
 
 \end{review}

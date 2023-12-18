@@ -1280,7 +1280,9 @@ and dissemination of our digital scholarly editions as we are about the
 transcription of our source materials.
 
 \begin{flushleft}
-\bibliography{references/martinez} 
+\renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}
+\renewcommand*{\mkbibnamegiven}[1]{\textsc{#1}}
+\printbibliography
 \end{flushleft}
 
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}  
