@@ -189,6 +189,14 @@
     \thispagestyle{chaptertitlepage}
 }{}
 \AtEndEnvironment{preface}{%
+    % print the bibliography
+    \begin{flushleft}
+    \renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}
+    \renewcommand*{\mkbibnamegiven}[1]{\textsc{#1}}
+    \printbibliography
+    \end{flushleft}
+    % safeguard section numbering
+    \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}  
     %last page running header fix
     \protect\thispagestyle{preface}
 }
@@ -220,6 +228,14 @@
     \renewcommand*{\pagemark}{}%                            
 }
 \AtEndEnvironment{paper}{
+    % print the bibliography
+    \begin{flushleft}
+    \renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}
+    \renewcommand*{\mkbibnamegiven}[1]{\textsc{#1}}
+    \printbibliography
+    \end{flushleft}
+    % safeguard section numbering
+    \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}  
     % last page running header fix
     \protect\thispagestyle{fancy}%                              
 }
@@ -245,6 +261,14 @@
     \renewcommand*{\pagemark}{}%                                   
 }
 \AtEndEnvironment{review}{
+    % print the bibliography
+    \begin{flushleft}
+    \renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}
+    \renewcommand*{\mkbibnamegiven}[1]{\textsc{#1}}
+    \printbibliography
+    \end{flushleft}
+    % safeguard section numbering
+    \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}  
     % author name(s)
     \begin{flushright}\emph{\thecontributor}\end{flushright}
     % last page running header fix
