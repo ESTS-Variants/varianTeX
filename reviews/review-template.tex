@@ -124,5 +124,11 @@ See awesome Table~\ref{tab:table}.
 \item Aliquam dignissim blandit est, in dictum tortor gravida eget. In ac rutrum magna.
 \end{itemize}
 
+\begin{flushleft}
+    % use smallcaps for author names
+    \renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}
+    \renewcommand*{\mkbibnamegiven}[1]{\textsc{#1}} 
+\printbibliography
+\end{flushleft}
 
 \end{review}

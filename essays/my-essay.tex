@@ -39,4 +39,11 @@ Sample Abstract.
 \section*{} 
 Your Essay \citep{key}.
 
+\begin{flushleft}
+    % use smallcaps for author names
+    \renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}
+    \renewcommand*{\mkbibnamegiven}[1]{\textsc{#1}} 
+\printbibliography
+\end{flushleft}
+
 \end{paper}
