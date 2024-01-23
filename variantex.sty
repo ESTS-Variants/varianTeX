@@ -51,19 +51,14 @@
 %%%% ENCODING
 
 \usepackage[L7x, T1]{fontenc}           % use 8-bit T1 fonts
-\usepackage[utf8]{inputenc}             % allow utf-8 input
 \usepackage[full]{textcomp}                   % allows \textrightarrow etc.
 
 % LANGUAGES
 
-\usepackage[
-    main=english, 
-    lithuanian,
-%   hindi,                      % incompatible with BibLaTeX
-%   latin                       % incompatible with BibLaTeX
-]{babel}
-%\languageattribute{hindi}{modernhindi}
-%\usepackage{devanagari}
+\usepackage{polyglossia}
+\setmainlanguage{english} % Continue using english for rest of the document
+\setotherlanguages{hindi} % Now can use \texthindi
+\newfontfamily\hindifont{Noto Sans Devanagari}[Script=Devanagari]
 
 % biblatex
 \usepackage[
@@ -73,52 +68,29 @@
     ]{biblatex-chicago}
 \usepackage{csquotes}
 
-% special characters
-\DeclareUnicodeCharacter{2D7}{}         % allow ¡ character
-\DeclareUnicodeCharacter{45E}{}         % allow ў character
-\DeclareUnicodeCharacter{2032}{}        % allow ′ character
-\DeclareUnicodeCharacter{22EE}{}        % allow ⋮ character
-%\DeclareUnicodeCharacter{010D}{}        % allow č character
-\DeclareUnicodeCharacter{017F}{}        % allow ſ character
-\DeclareUnicodeCharacter{03F8}{}        % allow ϸ character
-\DeclareUnicodeCharacter{0915}{}        % allow क character
-\DeclareUnicodeCharacter{093E}{}        % allow  ा character
-\DeclareUnicodeCharacter{092E}{}        % allow म character
-\DeclareUnicodeCharacter{0423}{}   
-\DeclareUnicodeCharacter{0418}{}   
-\DeclareUnicodeCharacter{041F}{}   
-\DeclareUnicodeCharacter{0430}{}   
-\DeclareUnicodeCharacter{0438}{}   
-\DeclareUnicodeCharacter{0441}{}   
-\DeclareUnicodeCharacter{0439}{}   
-\DeclareUnicodeCharacter{0425}{}   
-\DeclareUnicodeCharacter{043B}{}   
-\DeclareUnicodeCharacter{0435}{}   
-\DeclareUnicodeCharacter{043D}{}   
-\DeclareUnicodeCharacter{0434}{}   
-\DeclareUnicodeCharacter{0440}{}   
-\DeclareUnicodeCharacter{043A}{}   
-\usepackage{textalpha}                  % allows for greek characters in text e.g. \textalpha = α
-
-% uncomment to allow for ſ character ('long s') through new \longs command. 
-% May throw up warnings, but should work
-% \usepackage[veryoldstyle]{kpfonts}      
-% \newcommand{\longs}{{\fontfamily{jkpvos}\selectfont{}s}} 
+% special characters  
+\usepackage{textalpha}                  % allows for greek characters in text 
 
 %%%% FONTS
 
 % Palatino font options
-\usepackage{mathpazo}                   % Palatino in LaTeX math
-\usepackage{tgpagella}                  % Palatino font
-\newcommand{\ltfamily}{\familydefault}  % Makes sure LaTeX keeps using Palatino in Lithuanian 
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\let\circ\undefined
+\let\diamond\undefined
+\let\bullet\undefined
+\let\emptyset\undefined
+\let\owns\undefined
+\setmathfont{TeX Gyre Pagella Math}
+\let\ocirc\undefined
+\let\widecheck\undefined
+
 \addtokomafont{disposition}{\rmfamily}  % Palatino for titles etc.
 \setkomafont{descriptionlabel}{         % font for description lists    
 \usekomafont{captionlabel}\bfseries     % Palatino bold
 }
 \setkomafont{caption}{\footnotesize}    % smaller font size for captions
-% To make sure LaTeX keeps using Palatino in Lithuanian:
-% in OVERLEAF change the following \newcommand to \renewcommand
-% \newcommand{\ltfamily}{\familydefault} 
+
 
 \usepackage{mathabx}                    % allows for nicer looking \cup, \curvearrowbotright, etc. !!IMPORTANT!! These are math symbols and should be surrounded by $dollar signs$
 \usepackage[normalem]{ulem}                       % allows for strikethrough with \sout etc.
@@ -439,4 +411,3 @@
     %   #some comment
     %   cd Documents
     %   \end{lstlisting}
-
