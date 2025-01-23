@@ -1,0 +1,38 @@
+\definecolor{variantscover}{RGB}{178,183,187}
+\definecolor{logocolor}{RGB}{217,217,217}
+\pagenumbering{gobble}
+%\color{white}
+\pagecolor{variantscover}
+\vspace{5em}
+\begin{tikzpicture}[
+squarednode/.style={rectangle, fill=logocolor, very thick, minimum size=20mm},
+]
+\hspace{-6.7em}\node[squarednode]{\color{white}\Huge \hspace{1em}~~~~\thejournal
+\vspace{1em}~~~~~~~~~~}; 
+\hspace{24em}\node{\Huge \thevolume};
+\end{tikzpicture}
+
+\begin{center}
+\vspace{1em}
+\Huge\textsc{\thevolumetitle}
+
+\vfill 
+
+\begin{figure}[H]
+    \centering
+    \frame{\includegraphics[width=.9\linewidth]{media/martinez2.png}}
+    \label{fig:cover}
+\end{figure}
+
+\vfill
+
+\end{center}
+\color{white}
+\Large Edited by \\
+\generaleditor, \associateeditor, \guesteditor ~and \revieweditor
+\color{black}
+
+
+\newpage
+\pagecolor{white}
+\newpage
