@@ -47,6 +47,8 @@
 \usepackage{rotating}           % provides sidewaysfigure environment
 \usepackage{media9}             % allows for video in the pdf
 \usepackage{xurl}               % allows URLs to (line)break ANYWHERE
+\usepackage{multicol}           % allows for multiple columns
+\usepackage{tikz}               % allows for the 'graphics' on the cover page
 
 %%%% ENCODING
 
@@ -58,8 +60,8 @@
 \setmainlanguage{english} % Continue using english for rest of the document
 
 % If necessary, the following lets you use \texthindi. Note, however, that BibLaTeX does not support it and will report a 'warning'.
-% \setotherlanguages{hindi} 
-% \newfontfamily\hindifont{Noto Sans Devanagari}[Script=Devanagari]
+\setotherlanguages{hindi} 
+\newfontfamily\hindifont{Noto Sans Devanagari}[Script=Devanagari]
 
 % biblatex
 \usepackage[
@@ -73,6 +75,7 @@
 \usepackage{textalpha}                  % allows for greek characters in text 
 
 %%%% FONTS
+\usepackage{scalefnt}                   % allows more font sizes through scaling
 
 % Palatino font options
 \usepackage{unicode-math}
@@ -167,14 +170,14 @@
     \newrefsection
     \phantomsection
     \cleardoublepage
-    \addcontentsline{toc}{part}{Editors' Preface}
+    \addcontentsline{toc}{part}{\theshortcontribution}
     % enable running title
     \pagestyle{preface}
     % \chapter*{Editors' Preface}    
     % reset the section counter for each paper
     \setcounter{section}{0}  
     % no running title on first page, page number center bottom instead
-    \thispagestyle{chaptertitlepage}
+    \thispagestyle{contributiontitlepage}
 }{}
 \AtEndEnvironment{preface}{%
     % safeguard section numbering
