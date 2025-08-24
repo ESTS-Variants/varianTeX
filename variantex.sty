@@ -20,6 +20,7 @@
     left=20mm,
     height=173mm,
     width=109mm,
+    head=21.0pt,
     ]{geometry}
 
 \setlength{\marginparwidth}{1.25cm} % sets up acceptable margin for \todonotes package (see preamble/packages.tex).
@@ -38,7 +39,7 @@
 \usepackage{changepage}         % detect odd/even pages
 \usepackage{array}
 \usepackage{float}              % get figures etc. to stay where they are with [H]
-\usepackage{subfigure}          % \subfigures witin a \begin{figure}
+\usepackage{subcaption}          % replaces deprecated `subfigure` package
 \usepackage{longtable}          % allows for tables that stretch over multiple pages
 \setlength{\marginparwidth}{2cm}
 \usepackage[textsize=footnotesize]{todonotes} % enables \todo's for editors
@@ -49,7 +50,7 @@
 \usepackage{xurl}               % allows URLs to (line)break ANYWHERE
 \usepackage{multicol}           % allows for multiple columns
 \usepackage{tikz}               % allows for the 'graphics' on the cover page
-
+\usepackage{scrlayer-scrpage}   % allows for the header/footers
 %%%% ENCODING
 
 \usepackage[full]{textcomp}                   % allows \textrightarrow etc.
@@ -60,8 +61,8 @@
 \setmainlanguage{english} % Continue using english for rest of the document
 
 % If necessary, the following lets you use \texthindi. Note, however, that BibLaTeX does not support it and will report a 'warning'.
-\setotherlanguages{hindi} 
-\newfontfamily\hindifont{Noto Sans Devanagari}[Script=Devanagari]
+%\setotherlanguages{hindi} 
+%\newfontfamily\hindifont{Noto Sans Devanagari}[Script=Devanagari]
 
 % biblatex
 \usepackage[
@@ -105,18 +106,7 @@
 % No (sub)sections in TOC
 \setcounter{tocdepth}{0}                
 
-% Redefines chapter title formatting
-\makeatletter                               
-\def\@makechapterhead#1{
-  \vspace*{50\p@}%
-  {\parindent \z@ \normalfont
-    \interlinepenalty\@M
-    \Large\raggedright #1\par\nobreak%
-    \vskip 40\p@%
-  }}
-\makeatother
 % a bit more space between titles and page numbers in TOC
-
 \makeatletter   
 \renewcommand\@pnumwidth{2.5em} 
 \makeatother
@@ -141,6 +131,10 @@
 \newcommand\shortcontribution[1]{\renewcommand\@shortcontribution{#1}}
 \newcommand\@shortcontribution{}
 \newcommand\theshortcontribution{\@shortcontribution}
+% define contribution type
+\newcommand\contributiontype[1]{\renewcommand\@contributiontype{#1}}
+\newcommand\@contributiontype{}
+\newcommand\thecontributiontype{\@contributiontype} 
 \makeatother
 
 %%%% COPYRIGHT
@@ -154,8 +148,8 @@
 
 % define \copyrightstatement for ease of use
 \newcommand{\copyrightstatement}{
-         \doclicenseIcon \ \theyear. 
-         \doclicenseLongText            % includes a link
+         \doclicenseLongText   \\         % includes a link
+         \doclicenseIcon \ \theyear \ \theshortcontributor 
 }
 
 %%%% ENVIRONMENTS
@@ -177,7 +171,7 @@
     % reset the section counter for each paper
     \setcounter{section}{0}  
     % no running title on first page, page number center bottom instead
-    \thispagestyle{contributiontitlepage}
+    \thispagestyle{plain.preface}
 }{}
 \AtEndEnvironment{preface}{%
     % safeguard section numbering
@@ -192,11 +186,18 @@
     % start every new paper on an uneven page 
     \cleardoublepage
     % enable running title
-    \pagestyle{fancy}
+    \pagestyle{paper}
     % change section numbering FROM [\chapter].[\section].[\subsection] TO [\section].[\subsection] ETC.
     \renewcommand{\thesection}{\arabic{section}}
-    % mark chapter % add author + title to the TOC
-    \chapter[\normalfont\textbf{\emph{\thecontributor}}: \thecontribution]{\vspace{-4em}\Large\normalfont\thecontribution\linebreak\normalsize\begin{flushright}\emph{\thecontributor}\end{flushright}}    
+    % add name and title to the toc
+    \addcontentsline{toc}{chapter}{\normalfont\textbf{\emph{\thecontributor}}: \thecontribution}
+    % mark the beginning of chapter add the title to the titlepage
+    \addchap*{\justifying{\Large\normalfont\thecontribution}}
+    % add the author names and contribution type
+    \begin{flushright}
+    \emph{\normalsize\thecontributor}\linebreak
+    \linebreak\emph{\footnotesize\thecontributiontype}
+    \linebreak\end{flushright}
     % reset the section counter for each paper
     \setcounter{section}{0}  
     % reset the figure counter for each paper
@@ -204,9 +205,7 @@
     % reset the table counter for each paper
     \renewcommand\thetable{\arabic{table}} 
     % no running title on first page, page number center bottom instead, include copyright statement
-    \thispagestyle{contributiontitlepage}
-    % formatting for the bibliography
-
+    \thispagestyle{plain.paper}
 }{}
 \AtBeginEnvironment{paper}{
     % keeps running title from the first page:
@@ -216,7 +215,7 @@
     % safeguard section numbering
     \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}  
     % last page running header fix
-    \protect\thispagestyle{fancy}%                              
+    \protect\thispagestyle{paper}%                              
 }
 % Reviews
 \newenvironment{review}{
@@ -225,15 +224,17 @@
     % start every new paper on an uneven page 
     \cleardoublepage
     % enable running title
-    \pagestyle{reviews}
+    \pagestyle{review}
     % change section numbering FROM [\chapter].[\section].[\subsection] TO [\section].[\subsection] ETC.
     \renewcommand{\thesection}{\arabic{section}} 
-    % mark chapter % add author + title to the TOC
-    \chapter[\normalfont\textbf{\emph{\thecontributor}}: \thecontribution]{}    % reset the section counter for each paper
+    % add name and title to the toc
+    \addcontentsline{toc}{chapter}{\normalfont\textbf{\emph{\thecontributor}}: \thecontribution}
+    % mark the beginning of chapter
+    \addchap*{}
+    % reset the section counter for each paper
     \setcounter{section}{0}  
     % no running title on first page, page number center bottom instead, include copyright statement
-    \thispagestyle{contributiontitlepage}
-    % formatting for the bibliography
+    \thispagestyle{plain.review}
 }{}
 \AtBeginEnvironment{review}{
 % keeps running title from the first page
@@ -245,7 +246,7 @@
     % safeguard section numbering
     \renewcommand{\thesubsection}{\thesection.\arabic{subsection}} 
     % last page running header fix
-    \protect\thispagestyle{reviews}                           
+    \protect\thispagestyle{review}                           
 }
 
 % Abstract
@@ -314,64 +315,45 @@
 %    \setcounter{secnumdepth}{4}
     
 %%%% HEADERFOOTER
+% Undo default slant in the header of footer areas
+\renewcommand{\headfont}{\itshape}
 
-% running title
-\RequirePackage{fancyhdr}
-% cuts off running titles that are too long
-%\RequirePackage{truncate}
-% makes header as wide as geometry (SET SAME AS \TEXTWIDTH!)
-\setlength{\headwidth}{109mm} 
-% LO = Left Odd
-\fancyhead[LO]{\small\emph{\theshortcontributor} \hspace*{.5em} \theshortcontribution} 
-% RE = Right Even
-\fancyhead[RE]{\scshape{\small\theissue}}
-% LE = Left Even
-\fancyhead[LE]{\small\thepage}            
-% RE = Right Odd
-\fancyhead[RO]{\small\thepage}    
-\fancyfoot{}
-% no line under running title; cannot be \@z but needs to be 0pt
-\renewcommand{\headrulewidth}{0 pt} 
-
-% special style for authors pages
-\fancypagestyle{authors}{
-    \fancyhead[LO]{\small\textit{Authors}} 
-    \fancyhead[LE]{\small\thepage}            
-    \fancyhead[RE]{\scshape{\small\theissue}}
-    \fancyhead[RO]{\small\thepage}            
-    \fancyfoot{}
+% style for papers/essays
+\defpairofpagestyles{paper}{
+\lohead[]{\small\emph{\theshortcontributor} \hspace*{.5em} \theshortcontribution}
+\rehead[]{\textsc{\small\theissue}}
+\lehead[]{\small\thepage} 
+\rohead[]{\small\thepage} 
+\chead[\scriptsize\centering\copyrightstatement]{}
+\cfoot[\small\thepage]{}
+}
+%  style for book reviews
+\defpairofpagestyles{review}{
+    \lohead[]{\small\textit{Book Reviews}} 
+    \lehead[]{\small\thepage}            
+    \rehead[]{\textsc{\small\theissue}}
+    \rohead[]{\small\thepage}            
+\chead[\scriptsize\centering\copyrightstatement]{}
+\cfoot[\small\thepage]{}
+}
+% style for prefaces
+\defpairofpagestyles{preface}{
+    \lohead[]{\small\textit{Editors' Preface}} 
+    \lehead[]{\small\thepage}            
+    \rehead[]{\textsc{\small\theissue}}
+    \rohead[]{\small\thepage}            
+    \rohead[]{\small\thepage} 
+    \chead[\scriptsize\centering\copyrightstatement]{}
+}
+%  style for authors pages
+\defpairofpagestyles{authors}{
+    \lohead[]{\small\textit{Authors}} 
+    \lehead[]{\small\thepage}            
+    \rehead[]{\textsc{\small\theissue}}
+    \rohead[]{\small\thepage}   
+    \cfoot[\small\thepage]{}
 }
 
-% special style for book reviews
-\fancypagestyle{reviews}{
-    \fancyhead[LO]{\small\textit{Book Reviews}} 
-    \fancyhead[LE]{\small\thepage}            
-    \fancyhead[RE]{\scshape{\small\theissue}}
-    \fancyhead[RO]{\small\thepage}            
-    \fancyfoot{}
-}
-
-% special style for Editors' preface.
-\fancypagestyle{preface}{
-    \fancyhead[LO]{\small\textit{Editors' Preface}} 
-    \fancyhead[LE]{\small\thepage}            
-    \fancyhead[RE]{\scshape{\small\theissue}}
-    \fancyhead[RO]{\small\thepage}            
-    \fancyfoot{}
-}
-% special style for first pages of contributions etc.
-% DOES include copyright statement
-\fancypagestyle{contributiontitlepage}{
-    \fancyhead[C]{\scriptsize\centering\copyrightstatement}
-    \fancyhead[L,R]{}
-    \fancyfoot[CE,CO]{\small\thepage}
-}
-% special style for first pages of other \chapters.
-% DOES NOT include copyright statement
-\fancypagestyle{chaptertitlepage}{
-    \fancyhead[C,L,R]{}
-    \fancyfoot[CE,CO]{\small\thepage}
-}
 % no page numbers on \part pages 
 \renewcommand*{\partpagestyle}{empty}
 
