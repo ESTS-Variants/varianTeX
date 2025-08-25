@@ -197,13 +197,15 @@
     \begin{flushright}
     \emph{\normalsize\thecontributor}\linebreak
     \linebreak\emph{\footnotesize\thecontributiontype}
-    \linebreak\end{flushright}
+    \end{flushright}
     % reset the section counter for each paper
     \setcounter{section}{0}  
     % reset the figure counter for each paper
     \renewcommand\thefigure{\arabic{figure}}    
     % reset the table counter for each paper
     \renewcommand\thetable{\arabic{table}} 
+    % reset the footnote counter for each paper
+    \setcounter{footnote}{0} 
     % no running title on first page, page number center bottom instead, include copyright statement
     \thispagestyle{plain.paper}
 }{}
@@ -233,6 +235,12 @@
     \addchap*{}
     % reset the section counter for each paper
     \setcounter{section}{0}  
+    % reset the figure counter for each paper
+    \renewcommand\thefigure{\arabic{figure}}    
+    % reset the table counter for each paper
+    \renewcommand\thetable{\arabic{table}} 
+    % reset the footnote counter for each paper
+    \setcounter{footnote}{0} 
     % no running title on first page, page number center bottom instead, include copyright statement
     \thispagestyle{plain.review}
 }{}
