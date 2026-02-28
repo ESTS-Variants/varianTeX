@@ -51,18 +51,32 @@
 \usepackage{multicol}           % allows for multiple columns
 \usepackage{tikz}               % allows for the 'graphics' on the cover page
 \usepackage{scrlayer-scrpage}   % allows for the header/footers
+
 %%%% ENCODING
 
 \usepackage[full]{textcomp}                   % allows \textrightarrow etc.
 
-% LANGUAGES
+%%%% LANGUAGES
 
+\usepackage{fontspec}
 \usepackage{polyglossia}
-\setmainlanguage{english} % Continue using english for rest of the document
+\setmainfont{Liberation Serif}[Ligatures=TeX]
+\setdefaultlanguage{english} % Continue using english for rest of the document
 
-% If necessary, the following lets you use \texthindi. Note, however, that BibLaTeX does not support it and will report a 'warning'.
-%\setotherlanguages{hindi} 
+% TO INCLUDE OTHER LANGUAGES
+% Marking text as written in another language than the default language can be useful, esp. when it comes to LaTeX's automatic end-of-line hyphenation rules. Since syllabification rules are language-specific, marking 'other'-language content as such can help hyphenate words correctly.
+% To incude other languages, uncomment the following command, remove any unwanted languages, and replace them according to your needs. You can then use \textLANGUAGE{} to mark other-lanugage content. For example: \textfrench{merci}, \textitalian{grazie}, and textgerman{danke}.
+
+%\setotherlanguages{french, italian, german}
+
+% TO INCLUDE LANGUAGES WITH DIFFERENT SCRIPTS
+% For text written in other languages that use different scripts, extra steps need to be taken in order for LaTeX to be able to access the right fonts for the characters used. The following code will allow you to cite text in hindi, arabic, and cyrillic scripts (like Russian). More scripts will be added here as use cases arise. Note, however, that BibLaTeX does not support these and will report a 'warning'. So far, I have not yet found a way to resolve this, but the warning seems inconsequential.
+
+%\setotherlanguages{hindi, arabic, russian} 
 %\newfontfamily\hindifont{Noto Sans Devanagari}[Script=Devanagari]
+%\newfontfamily\arabicfont[Script=Arabic]{Amiri}
+%\newfontfamily\cyrillicfont{Liberation Serif}[Script=Cyrillic,Ligatures=TeX]
+
 
 % biblatex
 \usepackage[
